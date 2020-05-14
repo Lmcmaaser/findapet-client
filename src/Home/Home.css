@@ -1,0 +1,24 @@
+.content {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 80%;
+  background-color: #4A93C2;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 10px;
+  font-size: 18px;
+}
