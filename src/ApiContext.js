@@ -2,10 +2,10 @@ import React from 'react';
 
 const ApiContext = React.createContext({
   pets: [],
-  // types: [],
   setPets: () => {},
   addPet: () => {},
   updatePet: () => {},
+  deletePet: () => {}
 });
 
 export default ApiContext;
