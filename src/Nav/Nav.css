@@ -1,0 +1,22 @@
+.Nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: #FF7575;
+  color: white;
+  font-size: 18px;
+  border: 10px solid black;
+}
+
+@media screen and (max-width: 460px) {
+  .Nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

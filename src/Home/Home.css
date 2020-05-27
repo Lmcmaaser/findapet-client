@@ -7,6 +7,7 @@
   padding: 10px;
   height: 80%;
   background-color: #4A93C2;
+  border: 10px solid black;
 }
 
 h2 {
@@ -18,7 +19,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 5px;
+  padding: 10px;
   margin: 10px;
   font-size: 18px;
+}
+
+.sub-section {
+  font-weight: bold;
 }

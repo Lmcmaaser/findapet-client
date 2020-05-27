@@ -12,8 +12,26 @@ class Delete extends React.Component {
 
   handleSubmit(event, pet) {
     event.preventDefault();
-    this.context.deletePet(pet);
-    this.props.history.push('/');
+    fetch(`${config.API_ENDPOINT}pets/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((res) => {
+        this.context.deletePet(pet)
+        this.props.history.push('/')
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
   render() {
