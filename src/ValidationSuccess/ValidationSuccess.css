@@ -1,0 +1,15 @@
+.success {
+  background-color: #FFFD8F;
+  border: 3px solid black;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  height: 80px;
+  padding: 6px;
+  text-align: center;
+  width: 300px;
+}
+
+.x-button {
+  padding: 5px 10px 5px 10px;
+}

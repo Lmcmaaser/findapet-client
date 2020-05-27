@@ -1,7 +1,8 @@
 import React from 'react';
-import ApiContext from '../ApiContext';
+import { v4 as uuidv4 } from 'uuid';
 import ValidationError from '../ValidationError.js';
-import config from '../config'
+import ValidationSuccess from '../ValidationSuccess/ValidationSuccess'
+import PetContext from '../PetContext';
 import './Add.css';
 
 //to do, add an alert
@@ -31,7 +32,12 @@ class Add extends React.Component {
     };
   }
 
-  // handlers to update state properties
+  changeMessage = () => {
+    this.setState({
+      submitted: false
+    })
+  }
+
   updatePetType(pet_type) {
     this.setState({pet_type: {value: pet_type, touched: true}});
   }
@@ -44,39 +50,22 @@ class Add extends React.Component {
   updateAge(age) {
     this.setState({age: {value: age, touched: true}});
   }
-
+  // uuid library works
   handleSubmit(event) {
     event.preventDefault();
-    const { name, age, sex, pet_type } = this.state;
+    const { name, pet_type, sex, age } = this.state;
+    const uuid = uuidv4();
     const no = "no";
     const pet = {
+      id: uuid,
       name: name.value,
-      age: age.value,
+      pet_type: pet_type.value,
       sex: sex.value,
-      adopted: no,
-      pet_type: pet_type.value
+      age: age.value,
+      adopted: no
     }
-    // this.context.addPet(pet)
-    fetch(`${config.API_ENDPOINT}pets`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `bearer ${config.API_TOKEN}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(pet)
-    })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(event => Promise.reject(event))
-        return res.json()
-      })
-      .then((pet) => {
-        this.context.addPet(pet)
-        this.props.history.goBack()
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+    console.log(pet)
+    this.context.addPet(pet)
     this.resetForm();
   }
 
@@ -109,6 +98,7 @@ class Add extends React.Component {
       return "Success! The pet was added!"
     }
   }
+
   validateName() {
     const name = this.state.name.value.trim();
     if (name.length === 0) {
@@ -117,6 +107,7 @@ class Add extends React.Component {
       return "Name must include characters from the modern English alphabet";
     }
   }
+
   validateAge() {
     const age = this.state.age.value.trim();
     if (age.length === 0) {
@@ -134,11 +125,13 @@ class Add extends React.Component {
     const ageError = this.validateAge();
     return (
       <form className="add-form" onSubmit={event => this.handleSubmit(event)}>
-        {this.state.submitted && (
-          <ValidationError message={successMessage} id="successMessage"/>
-        )}
         <h2>Add an animal to the database (*  indicates a required field)</h2>
         <fieldset>
+          {this.state.submitted && (
+            <ValidationSuccess message={successMessage}
+              changeMessage={this.changeMessage}
+             className="successMessage"/>
+          )}
           <legend>Add Form</legend>
             <label className="main-label" htmlFor="pet_type">
               Select an animal type *
@@ -148,6 +141,7 @@ class Add extends React.Component {
                 type="radio"
                 id="dog"
                 name="pet_type"
+
                 value="dog"
                 aria-label="select pet type"
                 required
@@ -188,7 +182,6 @@ class Add extends React.Component {
                 name="name"
                 id="name"
                 value={this.state.name.value}
-                placeholder="Fluffy"
                 aria-label="add-name"
                 aria-required="true"
                 aria-invalid={ this.state.name.touched && !!nameError }
@@ -234,7 +227,6 @@ class Add extends React.Component {
                 id="age"
                 required
                 value={this.state.age.value}
-                placeholder="5"
                 aria-label="add-age"
                 onChange={event => this.updateAge(event.target.value)}
               />

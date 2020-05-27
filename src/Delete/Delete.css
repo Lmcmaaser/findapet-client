@@ -1,0 +1,51 @@
+.delete-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: #4A93C2;
+  border: 10px solid black;
+}
+
+h2 {
+  text-align: center;
+  color: black;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  padding-top: 0.35em;
+  padding-bottom: 0.35em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  margin-left: 2px;
+  margin-right: 2px;
+  border: 3px solid #FFFD8F;
+  border-radius: 10px;
+}
+
+.pet-section {
+  justify-content: center;
+  margin: 20px;
+  font-size: 20px;
+  padding: 15px;
+  border: 3px solid #003B61;
+  border-radius: 10px;
+}
+
+button.submit-button {
+  border-radius: 20px;
+  border: 2px solid black;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  height: 70px;
+  padding: 8px;
+  text-align: center;
+  width: 90px;
+  margin: 20px 20px 20px auto;
+}
