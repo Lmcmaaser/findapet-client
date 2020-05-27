@@ -1,5 +1,6 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
+import config from '../config'
 import './Update.css';
 
 class Update extends React.Component {
@@ -62,8 +63,26 @@ class Update extends React.Component {
   handleSubmit(event, pet) {
     event.preventDefault();
     const updatedPet = this.updatePet(pet);
-    this.context.updatePet(updatedPet) //or pet?
-    this.props.history.push('/')
+    fetch(`${config.API_ENDPOINT}pets/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((updatedPet) => {
+        this.context.updatePet(updatedPet)
+        this.props.history.push('/')
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
 
 

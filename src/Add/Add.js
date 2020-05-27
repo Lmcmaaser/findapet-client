@@ -2,6 +2,7 @@ import React from 'react';
 import ValidationError from '../ValidationError.js';
 import ValidationSuccess from '../ValidationSuccess/ValidationSuccess'
 import ApiContext from '../ApiContext';
+import config from '../config'
 import './Add.css';
 
 class Add extends React.Component {
@@ -60,8 +61,26 @@ class Add extends React.Component {
       adopted: no,
       pet_type: pet_type.value
     }
-    console.log(pet)
-    this.context.addPet(pet)
+    fetch(`${config.API_ENDPOINT}pets`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${config.API_TOKEN}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(pet)
+    })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(event => Promise.reject(event))
+        return res.json()
+      })
+      .then((pet) => {
+        this.context.addPet(pet)
+        this.props.history.goBack()
+      })
+      .catch(error => {
+        console.error({ error })
+      })
     this.resetForm();
   }
 
