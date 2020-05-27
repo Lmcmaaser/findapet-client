@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import ApiContext from '../ApiContext';
+import config from '../config';
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
@@ -12,20 +13,13 @@ import ValidationSuccess from '../ValidationSuccess/ValidationSuccess'
 import './App.css';
 
 class App extends Component {
-  state = {
-    pets: [],
-    changed: false
-  };
-
-  //do I need this?
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     pets: this.props.data.pets,
-  //     types: this.props.data.types,
-  //     changed: false,
-  //   }
-  // };
+  constructor(props) {
+    super(props);
+    this.state = {
+      pets: [],
+      changed: false
+    }
+  }
 
   changeMessage = () => {
     this.setState({
@@ -37,58 +31,98 @@ class App extends Component {
       return "Success! Change was made!"
     }
   }
+
   handleDeletePet = deletePet => {
-    this.setState({
-        changed: true,
-        pets: this.state.pets.filter(pet => pet.id !== deletePet.id)
-    })
-  }
-  handleUpdatePet = updatedPet => {
-    const updatedPets = this.state.pets.map((pet) => {
-      if (pet.id === updatedPet.id) {
-        for (let key in pet ){
-          pet[key] = updatedPet[key];
-        }
+    fetch(`${config.API_ENDPOINT}pets/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
       }
-      return pet;
-    });
-    this.setState({
-      changed: true,
-      pets: updatedPets
     })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((deletePet) => {
+        this.getAllPets(deletePet);
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
+
+  handleUpdatePet = updatedPet => {
+    fetch(`${config.API_ENDPOINT}pets/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((updatedPet) => {
+        this.getAllPets(updatePet);
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+  }
+
   handleAddPet = pet => {
-    this.setState({
-      pets: this.state.pets.concat(pet)
+    fetch(`${config.API_ENDPOINT}pets`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${config.API_TOKEN}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(pet)
     })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(event => Promise.reject(event))
+        return res.json()
+      })
+      .then((pet) => {
+        this.getAllPets(pet);
+      })
+      .catch(error => {
+        console.error({ error })
+      })
   }
-  handleSetPets = pet => {
-    this.setState({
-      filteredPets: this.state.pets.concat(pet)
-    })
+
+  getAllPets() {
+    Promise.all([
+      fetch(`${config.API_ENDPOINT}pets`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'authorization': `bearer ${config.API_TOKEN}`
+        }
+      })
+    ])
+      .then(([petsRes]) => {
+          if (!petsRes.ok)
+            return petsRes.json().then(e => Promise.reject(e));
+          return Promise.all([petsRes.json()]);
+      })
+      .then(([pets]) => {
+          this.setState({pets});
+      })
+      .catch(error => {
+          console.error({error});
+      });
   }
 
   componentDidMount() {
-      Promise.all([
-        fetch(`${config.API_ENDPOINT}pets`, {
-          method: 'GET',
-          headers: {
-            'content-type': 'application/json',
-            'authorization': `bearer ${config.API_TOKEN}`
-          }
-        })
-      ])
-        .then(([petsRes]) => {
-            if (!petsRes.ok)
-              return petsRes.json().then(e => Promise.reject(e));
-            return Promise.all([petsRes.json()]);
-        })
-        .then(([pets]) => {
-            this.setState({pets});
-        })
-        .catch(error => {
-            console.error({error});
-        });
+    this.getAllPets();
   }
 
   render() {

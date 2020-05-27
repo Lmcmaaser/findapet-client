@@ -1,9 +1,9 @@
 import React from 'react'
-import PetContext from '../PetContext'
+import ApiContext from '../ApiContext'
 import './Update.css';
 
 class Update extends React.Component {
-  static contextType = PetContext;
+  static contextType = ApiContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -62,26 +62,8 @@ class Update extends React.Component {
   handleSubmit(event, pet) {
     event.preventDefault();
     const updatedPet = this.updatePet(pet);
-    fetch(`${config.API_ENDPOINT}pets/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${config.API_TOKEN}`
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(event => Promise.reject(event))
-        }
-        return res
-      })
-      .then((res) => {
-        this.context.updatePet(updatedPet) //or pet?
-        this.props.history.push('/')
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+    this.context.updatePet(updatedPet) //or pet?
+    this.props.history.push('/')
   }
 
 

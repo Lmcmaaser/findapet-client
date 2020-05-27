@@ -1,9 +1,7 @@
 import React from 'react';
-import PetContext from '../PetContext';
-import Store from '../dummy-store';
+import ApiContext from '../ApiContext';
 import './Search.css';
 import { Link } from 'react-router-dom';
-import Pet from '../Pet/Pet'
 
 export default class Search extends React.Component {
   constructor(props) {
@@ -33,10 +31,10 @@ export default class Search extends React.Component {
       }
   }
 
-  static contextType = PetContext;
+  static contextType = ApiContext;
 
   componentDidMount() {
-    this.context.setPets(Store.pets)
+    // this.context.setPets(Store.pets)
   }
 
   // "filter" is the value of the selected input

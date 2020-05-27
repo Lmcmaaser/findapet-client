@@ -1,13 +1,11 @@
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import ValidationError from '../ValidationError.js';
 import ValidationSuccess from '../ValidationSuccess/ValidationSuccess'
-import PetContext from '../PetContext';
+import ApiContext from '../ApiContext';
 import './Add.css';
 
-//to do, add an alert
 class Add extends React.Component {
-  static contextType = PetContext;
+  static contextType = ApiContext;
 
   constructor(props) {
     super(props)
@@ -50,19 +48,17 @@ class Add extends React.Component {
   updateAge(age) {
     this.setState({age: {value: age, touched: true}});
   }
-  // uuid library works
+
   handleSubmit(event) {
     event.preventDefault();
     const { name, pet_type, sex, age } = this.state;
-    const uuid = uuidv4();
     const no = "no";
     const pet = {
-      id: uuid,
       name: name.value,
-      pet_type: pet_type.value,
-      sex: sex.value,
       age: age.value,
-      adopted: no
+      sex: sex.value,
+      adopted: no,
+      pet_type: pet_type.value
     }
     console.log(pet)
     this.context.addPet(pet)
