@@ -63,26 +63,8 @@ class Update extends React.Component {
   handleSubmit(event, pet) {
     event.preventDefault();
     const updatedPet = this.updatePet(pet);
-    fetch(`${config.API_ENDPOINT}pets/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${config.API_TOKEN}`
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(event => Promise.reject(event))
-        }
-        return res
-      })
-      .then((updatedPet) => {
-        this.context.updatePet(updatedPet)
-        this.props.history.push('/')
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+    this.context.updatePet()
+    this.props.history.push('/')
   }
 
 

@@ -32,39 +32,94 @@ class App extends Component {
     }
   }
 
-  handleDeletePet = deletePet => {
-    this.setState({
-        changed: true,
-        pets: this.state.pets.filter(pet => pet.id !== deletePet.id)
+  handleDeletePet = pet => {
+    fetch(`${config.API_ENDPOINT}/delete/${pet}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
+      }
     })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((res) => {
+        this.getAllPets(res)
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+    // this.setState({
+    //     changed: true,
+    //     pets: this.state.pets.filter(pet => pet.id !== deletePet.id)
+    // })
   }
 
   handleUpdatePet = updatedPet => {
-    const updatedPets = this.state.pets.map((pet) => {
-      if (pet.id === updatedPet.id) {
-        for (let key in pet ){
-          pet[key] = updatedPet[key];
-        }
+    fetch(`${config.API_ENDPOINT}pets/${updatedPet}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${config.API_TOKEN}`
       }
-      return pet;
-    });
-    this.setState({
-      changed: true,
-      pets: updatedPets
     })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(event => Promise.reject(event))
+        }
+        return res
+      })
+      .then((res) => {
+        this.getAllPets(res);
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+    // const updatedPets = this.state.pets.map((pet) => {
+    //   if (pet.id === updatedPet.id) {
+    //     for (let key in pet ){
+    //       pet[key] = updatedPet[key];
+    //     }
+    //   }
+    //   return pet;
+    // });
+    // this.setState({
+    //   changed: true,
+    //   pets: updatedPets
+    // })
   }
 
   handleAddPet = pet => {
-    this.setState({
-      pets: this.state.pets.concat(pet)
+    fetch(`${config.API_ENDPOINT}`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${config.API_TOKEN}`,
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(pet)
     })
+      .then(res => {
+        if (!res.ok)
+          return res.json().then(event => Promise.reject(event))
+        return res.json()
+      })
+      .then((res) => {
+        this.getAllPets(res);
+      })
+      .catch(error => {
+        console.error({ error })
+      })
+    // this.setState({
+    //   pets: this.state.pets.concat(pet)
+    // })
   }
+
+
 
   getAllPets() {
-
-  }
-
-  componentDidMount() {
     Promise.all([
       fetch(`${config.API_ENDPOINT}`, {
         method: 'GET',
@@ -85,6 +140,10 @@ class App extends Component {
       .catch(error => {
           console.error({error});
       });
+  }
+
+  componentDidMount() {
+    this.getAllPets();
   }
 
   render() {
