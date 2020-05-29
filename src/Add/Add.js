@@ -61,7 +61,7 @@ class Add extends React.Component {
       pet_type: pet_type.value
     }
     this.context.addPet(pet)
-    this.props.history.goBack()
+    // this.props.history.goBack()
     this.resetForm();
   }
 

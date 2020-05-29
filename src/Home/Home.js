@@ -15,7 +15,7 @@ class Home extends React.Component {
               You can add, search for, and update any pet in the database.
             </li>
           </ul>
-          <div className="sub-section">How to Add a Pet</div>
+          <div className="sub_title">How to Add a Pet</div>
             <ol>
               <li>
                 Add a pet to the database by clicking the "Add" link in the navigation bar at the top of the screen.
@@ -24,7 +24,7 @@ class Home extends React.Component {
                 Fill out the form in it's entirety, and click the "Submit" button; the pet has now been added to the database.
               </li>
             </ol>
-          <div className="sub-section">How to Use the Search Page</div>
+          <div className="sub_title">How to Use the Search Page</div>
             <ol>
               <li>
                 To search for a pet, or for multiple pets, click the "Search" link in the navigation bar at the top of the screen.
@@ -42,7 +42,7 @@ class Home extends React.Component {
                 If you want to start a new search, click the button that says "Reset Search".
               </li>
             </ol>
-          <div className="sub-section">How to Update a Pet's Information</div>
+          <div className="sub_title">How to Update a Pet's Information</div>
             <ol>
               <li>
                 To update a pet's information, use the Search page to find the pet you want to update.
@@ -57,7 +57,7 @@ class Home extends React.Component {
                 Click the "Submit" button; the pet's information has now been updated in the database!
               </li>
             </ol>
-          <div className="sub-section">How to Delete a Pet from the Database</div>
+          <div className="sub_title">How to Delete a Pet from the Database</div>
             <ol>
               <li>
                 To delete a pet's information, use the Search page to find the pet you want to delete.

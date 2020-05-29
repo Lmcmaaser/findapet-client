@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   height: 80%;
   background-color: #4A93C2;
   border: 10px solid black;
@@ -20,10 +20,17 @@ h2 {
   align-items: center;
   justify-content: center;
   padding: 10px;
-  margin: 10px;
+  /* margin: 10px; */
   font-size: 18px;
 }
 
-.sub-section {
+.intro {
+  border: 2px solid black;
+  margin-bottom: 8px;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.sub_title {
   font-weight: bold;
 }

@@ -58,8 +58,8 @@ class App extends Component {
     // })
   }
 
-  handleUpdatePet = updatedPet => {
-    fetch(`${config.API_ENDPOINT}pets/${updatedPet}`, {
+  handleUpdatePet = uPet => {
+    fetch(`${config.API_ENDPOINT}/update/${uPet}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -91,9 +91,9 @@ class App extends Component {
     //   pets: updatedPets
     // })
   }
-
+  //working!!!
   handleAddPet = pet => {
-    fetch(`${config.API_ENDPOINT}`, {
+    fetch(`${config.API_ENDPOINT}pets`, {
       method: 'POST',
       headers: {
         'Authorization': `bearer ${config.API_TOKEN}`,
@@ -112,16 +112,13 @@ class App extends Component {
       .catch(error => {
         console.error({ error })
       })
-    // this.setState({
-    //   pets: this.state.pets.concat(pet)
-    // })
   }
 
 
 
   getAllPets() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}`, {
+      fetch(`${config.API_ENDPOINT}pets`, {
         method: 'GET',
         headers: {
           'content-type': 'application/json',

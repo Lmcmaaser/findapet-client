@@ -1,6 +1,5 @@
 import React from 'react';
 import ApiContext from '../ApiContext';
-import config from '../config'
 import './Delete.css'
 
 class Delete extends React.Component {

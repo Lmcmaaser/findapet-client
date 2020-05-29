@@ -4,6 +4,7 @@ import './Search.css';
 import { Link } from 'react-router-dom';
 
 export default class Search extends React.Component {
+  static contextType = ApiContext;
   constructor(props) {
     super(props)
     this.state = {
@@ -30,13 +31,6 @@ export default class Search extends React.Component {
         }
       }
   }
-
-  static contextType = ApiContext;
-
-  componentDidMount() {
-    // this.context.setPets(Store.pets)
-  }
-
   // "filter" is the value of the selected input
   // this.state.pet_typeFilter will contain an array of the selected animals to be filtered
   updatePetType(event) {
@@ -104,6 +98,7 @@ export default class Search extends React.Component {
   render () {
     const { pets=[] } = this.context
     let filteredPets = this.getFilteredPets(pets)
+    console.log("filteredPets:", filteredPets)
     return(
       <div className="complete-section">
         <form className="search-form" id="search-form" >

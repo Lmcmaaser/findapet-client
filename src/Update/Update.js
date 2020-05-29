@@ -1,6 +1,5 @@
 import React from 'react'
 import ApiContext from '../ApiContext'
-import config from '../config'
 import './Update.css';
 
 class Update extends React.Component {
@@ -46,6 +45,7 @@ class Update extends React.Component {
 
   //pet = original object
   updatePet(pet) {
+    console.log("updatePet ran")
     // value update for keys
     if (this.state.name.touched){
       pet.name = this.state.name.value;
@@ -56,14 +56,15 @@ class Update extends React.Component {
     if (this.state.adopted.touched) {
       pet.adopted = this.state.adopted.value;
     }
-    console.log(pet);
+    console.log("pet:", pet);
     return pet;
   }
 
   handleSubmit(event, pet) {
     event.preventDefault();
-    const updatedPet = this.updatePet(pet);
-    this.context.updatePet()
+    const uPet = this.updatePet(pet);
+    console.log("updated pet", uPet)
+    this.context.updatePet(uPet)
     this.props.history.push('/')
   }
 
@@ -72,7 +73,7 @@ class Update extends React.Component {
     const { pets=[] } = this.context;
     const pet = pets.find(pet => pet.id === this.props.match.params.id)
     // gets from route
-    let displayArr = Object.values(pet); //shows desired pet; FIX FORMAT!
+    // let displayArr = Object.values(pet); //shows desired pet; FIX FORMAT!
     return (
       <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
@@ -80,7 +81,7 @@ class Update extends React.Component {
           <legend>Update Form</legend>
             <label className="main-label">Pet to Update:</label>
               <div>
-                {displayArr}
+
               </div>
             <h4>Enter Information to Update</h4>
             <label  className="main-label" htmlFor="name">Name </label>
