@@ -56,11 +56,8 @@ class App extends Component {
   }
 
   // id is undefined
-  handleDeletePet = id => {
-    // this.setState({
-    //     pets: this.state.pets.filter(note => note.id !== noteId)
-    console.log(id)
-    fetch(`${config.API_ENDPOINT}delete/${id}`, {
+  handleDeletePet = pet => {
+    fetch(`${config.API_ENDPOINT}pets/${id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -74,7 +71,7 @@ class App extends Component {
         return res
       })
       .then((res) => {
-        this.getAllPets(res)
+        this.getAllPets(res);
       })
       .catch(error => {
         console.error({ error })
@@ -94,28 +91,6 @@ class App extends Component {
           return res.json().then(event => Promise.reject(event))
         }
         return res
-      })
-      .then((res) => {
-        this.getAllPets(res);
-      })
-      .catch(error => {
-        console.error({ error })
-      })
-  }
-  //working!!!
-  handleAddPet = pet => {
-    fetch(`${config.API_ENDPOINT}pets`, {
-      method: 'POST',
-      headers: {
-        'Authorization': `bearer ${config.API_TOKEN}`,
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(pet)
-    })
-      .then(res => {
-        if (!res.ok)
-          return res.json().then(event => Promise.reject(event))
-        return res.json()
       })
       .then((res) => {
         this.getAllPets(res);
