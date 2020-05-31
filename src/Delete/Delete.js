@@ -22,16 +22,18 @@ class Delete extends React.Component {
 
   render() {
     const { pets=[] } = this.context;
-    const pet = pets.find(pet => pet.id === this.props.match.params.id)
-    console.log(pet)
+    console.log(pets); //shows all pets
+    console.log(this.props.match.params.id); //shows pet id
+    const pet = pets.find(pet => pet.id === parseInt(
+      this.props.match.params.id
+    ))
+    console.log(pet)//shows full pet now
     return (
       <div className="delete-form" >
         <h2>Would you like to delete this pet?</h2>
           <div className="section">
             <div className="pet-section">
-              <div key={pet}>
-                {pet}
-              </div>
+              
             </div>
 
               <button

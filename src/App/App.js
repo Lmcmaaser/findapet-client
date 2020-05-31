@@ -55,9 +55,8 @@ class App extends Component {
       })
   }
 
-  // id is undefined
   handleDeletePet = pet => {
-    fetch(`${config.API_ENDPOINT}pets/${id}`, {
+    fetch(`${config.API_ENDPOINT}pets/${pet}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
