@@ -27,13 +27,14 @@ class Delete extends React.Component {
     const pet = pets.find(pet => pet.id === parseInt(
       this.props.match.params.id
     ))
+    console.log(pet.id);
     console.log(pet)//shows full pet now
     return (
       <div className="delete-form" >
         <h2>Would you like to delete this pet?</h2>
           <div className="section">
             <div className="pet-section">
-              
+
             </div>
 
               <button

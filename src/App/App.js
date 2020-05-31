@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   handleDeletePet = pet => {
-    fetch(`${config.API_ENDPOINT}pets/${pet}`, {
+    fetch(`${config.API_ENDPOINT}pets/${pet.id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
