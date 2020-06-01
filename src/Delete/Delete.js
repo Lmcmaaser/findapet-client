@@ -17,6 +17,7 @@ class Delete extends React.Component {
     console.log("submit fired");
     event.preventDefault();
     this.context.deletePet(pet);
+    this.context.showMessage();
     this.props.history.push('/');
   }
 

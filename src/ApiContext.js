@@ -5,7 +5,9 @@ const ApiContext = React.createContext({
   setPets: () => {},
   addPet: () => {},
   updatePet: () => {},
-  deletePet: () => {}
+  deletePet: () => {},
+  changeMessage: () => {},
+  showMessage: () => {}
 });
 
 export default ApiContext;

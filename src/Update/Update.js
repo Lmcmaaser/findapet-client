@@ -63,9 +63,10 @@ class Update extends React.Component {
   handleSubmit(event, pet) {
     event.preventDefault();
     const petToUpdate = this.upPet(pet);
-    console.log("updated pet", petToUpdate)
-    this.context.updatePet(petToUpdate)
-    this.props.history.push('/')
+    console.log("updated pet", petToUpdate);
+    this.context.updatePet(petToUpdate);
+    this.context.showMessage();
+    this.props.history.push('/');
   }
 
 

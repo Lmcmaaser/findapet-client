@@ -26,6 +26,11 @@ class App extends Component {
       changed: false
     })
   }
+  showMessage = () => {
+    this.setState({
+      changed: true
+    })
+  }
   validateSuccess() {
     if (this.state.changed) {
       return "Success! Change was made!"
@@ -133,7 +138,8 @@ class App extends Component {
       addPet: this.handleAddPet,
       updatePet: this.handleUpdatePet,
       deletePet: this.handleDeletePet,
-      changeMessage: this.changeMessage
+      changeMessage: this.changeMessage,
+      showMessage: this.showMessage
     }
     return (
       <ApiContext.Provider value={contextValue}>
