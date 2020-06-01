@@ -23,10 +23,14 @@ class Update extends React.Component {
   }
 
   static defaultProps = {
-    match: {
-      params: {}
-    }
+    onUpdatePet: () => {},
   }
+
+  // static defaultProps = {
+  //   match: {
+  //     params: {}
+  //   }
+  // }
 
   updateName(name) {
     this.setState({name: {value: name, touched: true}});
@@ -44,8 +48,8 @@ class Update extends React.Component {
   }
 
   //pet = original object
-  updatePet(pet) {
-    console.log("updatePet ran")
+  upPet(pet) {
+    console.log("upPet ran")
     // value update for keys
     if (this.state.name.touched){
       pet.name = this.state.name.value;
@@ -62,26 +66,31 @@ class Update extends React.Component {
 
   handleSubmit(event, pet) {
     event.preventDefault();
-    const uPet = this.updatePet(pet);
-    console.log("updated pet", uPet)
-    this.context.updatePet(uPet)
+    const petToUpdate = this.upPet(pet);
+    console.log("updated pet", petToUpdate)
+    this.context.updatePet(petToUpdate)
     this.props.history.push('/')
   }
 
 
   render() {
     const { pets=[] } = this.context;
-    const pet = pets.find(pet => pet.id === this.props.match.params.id)
-    // gets from route
-    // let displayArr = Object.values(pet); //shows desired pet; FIX FORMAT!
+    console.log(pets); //shows pets array
+    console.log(this.props.match.params.id); // shows pet id
+    const pet = pets.find(pet => pet.id === parseInt(
+      this.props.match.params.id
+    ))
+    console.log(pet); // shows pet object
+    // console.log(pet.id)
     return (
       <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
         <fieldset>
           <legend>Update Form</legend>
             <label className="main-label">Pet to Update:</label>
-              <div>
-
+              <div className="pet-section">
+                <div>
+                </div>
               </div>
             <h4>Enter Information to Update</h4>
             <label  className="main-label" htmlFor="name">Name </label>

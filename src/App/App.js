@@ -77,8 +77,9 @@ class App extends Component {
       })
   }
 
-  handleUpdatePet = pet => {
-    fetch(`${config.API_ENDPOINT}/update/${pet.id}`, {
+  // shows correct endpoint format http://localhost:8000/api/pets/7
+  handleUpdatePet = petToUpdate => {
+    fetch(`${config.API_ENDPOINT}pets/${petToUpdate.id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
