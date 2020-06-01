@@ -165,15 +165,15 @@ li {
   border: 2px solid black;
   margin-bottom: 8px;
   max-width: 600px;
-  padding: 8px 0 8px 8px;
+  padding: 8px 0 8px 10px;
 }
 
 .Pet_delete {
   background-color: white;
-  border: 0;
+  padding: 2px;
+  margin-right: 5px;
   color: #bdbcbc;
   float: right;
-  font-size: 12px;
+  font-size: 16px;
   position: relative;
-  transform-origin: right bottom;
 }
