@@ -40,6 +40,7 @@ class Update extends React.Component {
   updateAge(age) {
     this.setState({age: {value: age, touched: true}});
     console.log(age) //shows input
+    console.log(typeof"age"); //string
   }
 
   updateAdopted(adopted) {
