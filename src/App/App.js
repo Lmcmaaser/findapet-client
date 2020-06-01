@@ -78,6 +78,7 @@ class App extends Component {
   }
 
   // shows correct endpoint format http://localhost:8000/api/pets/7
+  //updates pet in state but not server
   handleUpdatePet = petToUpdate => {
     fetch(`${config.API_ENDPOINT}pets/${petToUpdate.id}`, {
       method: 'PATCH',

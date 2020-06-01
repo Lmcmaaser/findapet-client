@@ -22,9 +22,9 @@ class Update extends React.Component {
     };
   }
 
-  static defaultProps = {
-    onUpdatePet: () => {},
-  }
+  // static defaultProps = {
+  //   onUpdatePet: () => {},
+  // }
 
   // static defaultProps = {
   //   match: {
@@ -81,7 +81,7 @@ class Update extends React.Component {
       this.props.match.params.id
     ))
     console.log(pet); // shows pet object
-    // console.log(pet.id)
+    // let displayArr = Object.values(pet);
     return (
       <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
@@ -90,6 +90,7 @@ class Update extends React.Component {
             <label className="main-label">Pet to Update:</label>
               <div className="pet-section">
                 <div>
+
                 </div>
               </div>
             <h4>Enter Information to Update</h4>
