@@ -34,9 +34,14 @@ class Delete extends React.Component {
         <h2>Would you like to delete this pet?</h2>
           <div className="section">
             <div className="pet-section">
-
+              <div key={pet.id}>
+                <div>Name: {pet.name}<br /></div>
+                <div>Type: {pet.pet_type}<br /></div>
+                <div>Sex: {pet.sex}<br /></div>
+                <div>Age: {pet.age}<br /></div>
+                <div>Adopted: {pet.adopted}<br /></div>
+              </div>
             </div>
-
               <button
                 className="submit-button"
                 type="submit"

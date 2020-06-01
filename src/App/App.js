@@ -77,8 +77,8 @@ class App extends Component {
       })
   }
 
-  handleUpdatePet = id => {
-    fetch(`${config.API_ENDPOINT}/update/${id}`, {
+  handleUpdatePet = pet => {
+    fetch(`${config.API_ENDPOINT}/update/${pet.id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
