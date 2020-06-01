@@ -32,7 +32,6 @@ class App extends Component {
     }
   }
 
-  //working!!!
   handleAddPet = pet => {
     fetch(`${config.API_ENDPOINT}pets`, {
       method: 'POST',
@@ -131,10 +130,8 @@ class App extends Component {
     const successMessage = this.validateSuccess();
     const contextValue = {
       pets: this.state.pets,
-      types: this.state.types,
       addPet: this.handleAddPet,
       updatePet: this.handleUpdatePet,
-      setPets: this.handleSetPets,
       deletePet: this.handleDeletePet,
       changeMessage: this.changeMessage
     }

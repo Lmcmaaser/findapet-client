@@ -22,15 +22,10 @@ class Update extends React.Component {
     };
   }
 
-  // static defaultProps = {
-  //   onUpdatePet: () => {},
-  // }
+  static defaultProps = {
+    onUpdatePet: () => {},
+  }
 
-  // static defaultProps = {
-  //   match: {
-  //     params: {}
-  //   }
-  // }
 
   updateName(name) {
     this.setState({name: {value: name, touched: true}});
@@ -81,8 +76,8 @@ class Update extends React.Component {
     const pet = pets.find(pet => pet.id === parseInt(
       this.props.match.params.id
     ))
+    console.log(pet.id) // id is undefined
     console.log(pet); // shows pet object
-    // let displayArr = Object.values(pet);
     return (
       <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
@@ -90,8 +85,12 @@ class Update extends React.Component {
           <legend>Update Form</legend>
             <label className="main-label">Pet to Update:</label>
               <div className="pet-section">
-                <div>
-
+                <div key={pet.id}>
+                  <div>Name: {pet.name}<br /></div>
+                  <div>Type: {pet.pet_type}<br /></div>
+                  <div>Sex: {pet.sex}<br /></div>
+                  <div>Age: {pet.age}<br /></div>
+                  <div>Adopted: {pet.adopted}<br /></div>
                 </div>
               </div>
             <h4>Enter Information to Update</h4>
