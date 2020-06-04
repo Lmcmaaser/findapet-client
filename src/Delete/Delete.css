@@ -49,3 +49,13 @@ button.submit-button {
   width: 90px;
   margin: 20px 20px 20px auto;
 }
+
+@media screen and (max-width: 460px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .pet-section {
+    margin: 10px;
+  }
+}

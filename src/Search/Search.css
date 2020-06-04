@@ -13,7 +13,6 @@ h2 {
   text-align: center;
   color: black;
 }
-
 h4 {
   text-align: center;
   font-weight: bold;
@@ -21,12 +20,11 @@ h4 {
   color: black;
   margin: 10px;
 }
-
 h5 {
   font-variant: small-caps;
   font-weight: bold;
   font-size: 20px;
-  margin: 5px;
+  margin: 10px;
 }
 
 fieldset {
@@ -42,11 +40,9 @@ fieldset {
   border: 3px solid #FFFD8F;
   border-radius: 10px;
 }
-
 legend {
   display: none;
 }
-
 .main-label {
   font-variant: small-caps;
   font-weight: bold;
@@ -65,7 +61,6 @@ legend {
   -ms-user-select: none;
   user-select: none;
 }
-
 .container input {
   position: absolute;
   opacity: 0;
@@ -74,25 +69,20 @@ legend {
   width: 0;
 }
 
-
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
-
 .container input:checked ~ .checkmark {
   background-color: #2196F3;
 }
-
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-
 .container input:checked ~ .checkmark:after {
   display: block;
 }
-
 .container .checkmark:after {
   left: 9px;
   top: 5px;
@@ -108,11 +98,9 @@ legend {
 input[type=radio] {
   margin: 5px;
 }
-
 input[type=checkbox] {
   margin: 5px;
 }
-
 input[type=text] {
   margin: 5px;
   padding: 5px;
@@ -124,7 +112,6 @@ label {
   margin: 2px;
   font-size: 20px;
 }
-
 
 button.reset-button {
   border-radius: 20px;
@@ -142,11 +129,10 @@ button.reset-button {
 .results-section {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 5px;
   background-color: #4A93C2;
 }
-
 .results-list {
   display: flex;
   flex-direction: column;
@@ -163,9 +149,9 @@ button.reset-button {
 
 li {
   border: 2px solid black;
-  margin-bottom: 8px;
+  margin-bottom: 25px;
   max-width: 600px;
-  padding: 8px 0 8px 10px;
+  padding: 10px;
 }
 
 .Pet_delete {
@@ -176,4 +162,14 @@ li {
   float: right;
   font-size: 16px;
   position: relative;
+}
+
+@media screen and (max-width: 460px) {
+  h5 {
+    text-align: center;
+  }
+  .results-list {
+    display: flex;
+    flex-direction: column;
+  }
 }
