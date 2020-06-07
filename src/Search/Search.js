@@ -98,7 +98,6 @@ export default class Search extends React.Component {
   render () {
     const { pets=[] } = this.context
     let filteredPets = this.getFilteredPets(pets)
-    console.log("filteredPets:", filteredPets)
     return(
       <div className="complete-section">
         <form className="search-form" id="search-form" >

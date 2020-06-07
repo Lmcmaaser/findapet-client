@@ -10,11 +10,9 @@ class Delete extends React.Component {
 
   updateStatus(remove) {
     this.setState({remove: {value: remove, touched: true}});
-    console.log(remove) //shows input
   }
 
   handleSubmit(event, pet) {
-    console.log("submit fired");
     event.preventDefault();
     this.context.deletePet(pet);
     this.context.showMessage();
@@ -23,13 +21,9 @@ class Delete extends React.Component {
 
   render() {
     const { pets=[] } = this.context;
-    console.log(pets); //shows all pets
-    console.log(this.props.match.params.id); //shows pet id
     const pet = pets.find(pet => pet.id === parseInt(
       this.props.match.params.id
     ))
-    console.log(pet.id);
-    console.log(pet)//shows full pet now
     return (
       <div className="delete-form" >
         <h2>Would you like to delete this pet?</h2>

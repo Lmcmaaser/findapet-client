@@ -29,23 +29,18 @@ class Update extends React.Component {
 
   updateName(name) {
     this.setState({name: {value: name, touched: true}});
-    console.log(name) //shows input
   }
 
   updateAge(age) {
     this.setState({age: {value: age, touched: true}});
-    console.log(age) //shows input
-    console.log(typeof"age"); //string
   }
 
   updateAdopted(adopted) {
     this.setState({adopted: {value: adopted, touched: true}});
-    console.log(adopted) //shows input
   }
 
   //pet = original object
   upPet(pet) {
-    console.log("upPet ran")
     // value update for keys
     if (this.state.name.touched){
       pet.name = this.state.name.value;
@@ -56,14 +51,12 @@ class Update extends React.Component {
     if (this.state.adopted.touched) {
       pet.adopted = this.state.adopted.value;
     }
-    console.log("pet:", pet);
     return pet;
   }
 
   handleSubmit(event, pet) {
     event.preventDefault();
     const petToUpdate = this.upPet(pet);
-    console.log("updated pet", petToUpdate);
     this.context.updatePet(petToUpdate);
     this.context.showMessage();
     this.props.history.push('/');
@@ -72,13 +65,9 @@ class Update extends React.Component {
 
   render() {
     const { pets=[] } = this.context;
-    console.log(pets); //shows pets array
-    console.log(this.props.match.params.id); // shows pet id
     const pet = pets.find(pet => pet.id === parseInt(
       this.props.match.params.id
     ))
-    console.log(pet.id) // id is undefined
-    console.log(pet); // shows pet object
     return (
       <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
