@@ -201,26 +201,24 @@ export default class Search extends React.Component {
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Fluffy"
                 aria-label=" input name"
                 onChange={event => this.updateName(event.target.value)}
               />
-              <p>
+              <div className="input_info">
                 * Name must include characters from the modern English alphabet.
-              </p>
+              </div>
 
               <label className="main-label" htmlFor="age">Age *</label>
               <input
                 type="text"
                 name="age"
                 id="age"
-                placeholder="5"
                 aria-label="input age"
                 onChange={event => this.updateAge(event.target.value)}
               />
-              <p>
+              <div className="input_info">
                 * Age must contain at least one number and be between 1 and 2 characters long.
-              </p>
+              </div>
             <div>
               <button
                 type="reset"
@@ -237,7 +235,6 @@ export default class Search extends React.Component {
         <div className="results-section">
           <h4>Search Results:</h4>
           <div className="results-list">
-            <h5>List of pets:</h5>
             <ul>
               {filteredPets.map((pet) =>
                 <li key={pet.id} id={pet.id}>

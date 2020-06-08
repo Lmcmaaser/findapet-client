@@ -61,7 +61,6 @@ class Add extends React.Component {
       pet_type: pet_type.value
     }
     this.context.addPet(pet)
-    // this.props.history.goBack()
     this.resetForm();
   }
 
@@ -121,7 +120,8 @@ class Add extends React.Component {
     const ageError = this.validateAge();
     return (
       <form className="add-form" onSubmit={event => this.handleSubmit(event)}>
-        <h2>Add an animal to the database (*  indicates a required field)</h2>
+        <h2>Add a Pet</h2>
+        <div className="required">(*  indicates a required field)</div>
         <fieldset>
           {this.state.submitted && (
             <ValidationSuccess message={successMessage}

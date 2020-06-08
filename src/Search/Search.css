@@ -1,23 +1,25 @@
 .complete-section {
-  border: 10px solid black;
+
 }
 .search-form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5px;
-  background-color: #4A93C2;
+  padding: 20px;
+  background-color: #AD264C;
+  border: 2px solid #AD264C;
+  border-radius: 30px;
 }
 
 h2 {
   text-align: center;
-  color: black;
+  color: white;
 }
 h4 {
   text-align: center;
   font-weight: bold;
   font-size: 22px;
-  color: black;
+  color: white;
   margin: 10px;
 }
 h5 {
@@ -35,10 +37,8 @@ fieldset {
   padding-bottom: 0.35em;
   padding-left: 0.75em;
   padding-right: 0.75em;
-  margin-left: 2px;
-  margin-right: 2px;
-  border: 3px solid #FFFD8F;
-  border-radius: 10px;
+  border: none;
+  margin: 0px;
 }
 legend {
   display: none;
@@ -46,7 +46,9 @@ legend {
 .main-label {
   font-variant: small-caps;
   font-weight: bold;
-  margin: 5px;
+  color: white;
+  font-size: 20px;
+  margin: 5px 5px 0px 5px;
 }
 
 .container {
@@ -102,15 +104,21 @@ input[type=checkbox] {
   margin: 5px;
 }
 input[type=text] {
-  margin: 5px;
-  padding: 5px;
-  width: 50%;
+  /* margin: 5px; */
+  padding: 5px 5px 5px 10px;
+  /* width: 40%; */
   height: 35px;
+}
+
+.input_info {
+  color: white;
+  margin-top: 5px;
 }
 
 label {
   margin: 2px;
   font-size: 20px;
+  color: white;
 }
 
 button.reset-button {
@@ -129,13 +137,17 @@ button.reset-button {
 .results-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 5px;
-  background-color: #4A93C2;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #AD264C;
+  border: 2px solid #AD264C;
+  border-radius: 30px;
+  margin-top: 10px;
 }
 .results-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-size: 18px;
   padding-top: 0.35em;
   padding-bottom: 0.35em;
@@ -143,12 +155,16 @@ button.reset-button {
   padding-right: 0.75em;
   margin-left: 2px;
   margin-right: 2px;
-  border: 3px solid #FFFD8F;
-  border-radius: 10px;
+  color: white;
+}
+
+ul {
+  list-style-type: none;
 }
 
 li {
-  border: 2px solid black;
+  border: 2px solid #7A1B36;
+  border-radius: 25px;
   margin-bottom: 25px;
   max-width: 600px;
   padding: 10px;

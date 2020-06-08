@@ -2,9 +2,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 5px;
-  background-color: #4A93C2;
-  border: 10px solid black;
 }
 
 h2 {
@@ -22,15 +19,14 @@ h4 {
 fieldset {
   display: flex;
   flex-direction: column;
+  background-color: #AD264C;
   font-size: 18px;
   padding-top: 0.35em;
   padding-bottom: 0.35em;
   padding-left: 0.75em;
   padding-right: 0.75em;
-  margin-left: 2px;
-  margin-right: 2px;
-  border: 3px solid #FFFD8F;
-  border-radius: 10px;
+  border: none;
+  margin: 0px;
 }
 
 legend {
@@ -41,7 +37,7 @@ legend {
   font-variant: small-caps;
   font-weight: bold;
   font-size: 20px;
-  margin: 5px;
+  margin: 5px 5px 0px 5px;
 }
 
 .container {
@@ -66,9 +62,9 @@ legend {
 }
 
 input[type=text] {
-  margin: 5px;
-  padding: 5px;
-  width: 50%;
+  /* margin: 5px; */
+  padding: 5px 5px 5px 10px;
+  /* width: 40%; */
   height: 35px;
   font-size: 18px;
 }

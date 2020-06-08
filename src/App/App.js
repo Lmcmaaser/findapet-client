@@ -146,7 +146,6 @@ class App extends Component {
         <div className="App">
           <header className="App-header">
             <h1>FindAPet</h1>
-            <h3>Makes managing your animal shelter easier!</h3>
           </header>
           <nav>
             <Nav />

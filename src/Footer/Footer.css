@@ -1,17 +1,18 @@
-footer {
+ footer {
   width: 100%;
   margin-top: 10px;
   padding: 15px;
-  background-color: #003B61;
+  background-color: white;
+  /* border-top: 4px solid #A3D1D9; */
   text-align: center;
   color: black;
-  border: 10px solid black;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 p {
   display: inline-block;
   margin: 5px;
+  font-size: 20p;
 }
 
 a {
@@ -19,13 +20,14 @@ a {
 }
 
 a:link {
-  color: black;
+  color: #7A1B36;
+  font-weight: bold;
 }
 
 a:visited {
-  color: black;
+  color: #7A1B36;
 }
 
 a:hover {
-  color: #FFFD8F;
+  color: blue;
 }

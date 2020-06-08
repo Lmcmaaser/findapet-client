@@ -1,15 +1,23 @@
 .success {
-  background-color: #FFFD8F;
-  border: 3px solid black;
-  display: block;
+  background-color: white;
+  border: 3px solid white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   font-size: 20px;
   font-weight: bold;
-  height: 80px;
-  padding: 6px;
-  text-align: center;
-  width: 300px;
+  height: 100px;
+  width: 250px;
+  padding: 10px;
+  color: #7A1B36;
+  align-self: center;
 }
 
 .x-button {
   padding: 5px 10px 5px 10px;
+  width: 35px;
+  align-self: center;
+  margin-top: 5px;
 }
