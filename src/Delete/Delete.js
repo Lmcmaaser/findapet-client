@@ -25,7 +25,7 @@ class Delete extends React.Component {
       this.props.match.params.id
     ))
     return (
-      <div className="delete-form" >
+      pet ? <div className="delete-form" >
         <h2>Would you like to delete this pet?</h2>
           <div className="section">
             <div className="pet-section">
@@ -55,7 +55,7 @@ class Delete extends React.Component {
                 Cancel
               </button>
           </div>
-      </div>
+      </div> : <></>
     )
   }
 }

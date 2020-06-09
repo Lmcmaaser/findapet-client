@@ -8,13 +8,13 @@ class Nav extends React.Component {
     return (
       <Content className='Nav'>
         <Link to='/'>
-          Home Page
+          Home
         </Link>
         <Link to='/search'>
-          Search Database
+          Search
         </Link>
         <Link to='/add'>
-          Add an Animal
+          Add
         </Link>
       </Content>
     )

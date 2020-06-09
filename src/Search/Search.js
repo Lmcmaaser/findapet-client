@@ -227,7 +227,7 @@ export default class Search extends React.Component {
                 aria-label="reset button"
                 onClick={event => this.refreshPage(event.target.value)}
               >
-                Reset Search
+                Reset
               </button>
             </div>
           </fieldset>

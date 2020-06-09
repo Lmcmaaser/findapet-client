@@ -2,17 +2,27 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+  background-color: #AD264C;
+  border: 2px solid #AD264C;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 h2 {
   text-align: center;
-  color: black;
+  color: white;
 }
 
 h4 {
   text-align: center;
-  color: black;
+  color: white;
   margin: 10px;
+}
+
+.pet-section {
+  color: white;
 }
 
 

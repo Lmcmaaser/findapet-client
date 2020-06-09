@@ -69,7 +69,7 @@ class Update extends React.Component {
       this.props.match.params.id
     ))
     return (
-      <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
+      pet ? <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
         <fieldset>
           <legend>Update Form</legend>
@@ -135,7 +135,7 @@ class Update extends React.Component {
             </button>
           </div>
         </fieldset>
-      </form>
+      </form> : <></>
     )
   }
 }
