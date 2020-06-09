@@ -1,7 +1,7 @@
 .update-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   background-color: #AD264C;
   border: 2px solid #AD264C;
@@ -27,9 +27,8 @@ h4 {
 
 
 fieldset {
-  display: flex;
-  flex-direction: column;
   background-color: #AD264C;
+  display: flex;
   font-size: 18px;
   padding-top: 0.35em;
   padding-bottom: 0.35em;
@@ -72,9 +71,7 @@ legend {
 }
 
 input[type=text] {
-  /* margin: 5px; */
   padding: 5px 5px 5px 10px;
-  /* width: 40%; */
   height: 35px;
   font-size: 18px;
 }

@@ -1,26 +1,42 @@
 .add-form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   padding: 5px;
   background-color: #AD264C;
   border: 2px solid #AD264C;
   border-radius: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   color: white;
+  height: 600px;
 }
 
 h2 {
   text-align: center;
   color: white;
+  font-size: 30px;
 }
 .required {
   text-align: center;
   font-size: 18px;
+  margin: 10px;
+}
+
+.fieldset_wrap {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  height: 400px;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 30px;
 }
 
 fieldset {
   display: flex;
   flex-direction: column;
+  text-align: left;
   font-size: 18px;
   padding-top: 0.35em;
   padding-bottom: 0.35em;
@@ -28,8 +44,8 @@ fieldset {
   padding-right: 0.75em;
   border: none;
   margin: 0px;
+  width: 50%;
 }
-
 legend {
   display: none;
 }
@@ -73,27 +89,27 @@ input[type=radio] {
 input[type=text] {
   /* margin: 5px; */
   padding: 5px 5px 5px 10px;
-  /* width: 40%; */
+  width: 70%;
   height: 40px;
   font-size: 18px;
 }
 
 label {
-  /* margin: 5px; */
   padding: 10px;
   font-size: 20px;
 }
 
 button.submit-button {
+  display: flex;
+  align-self: center;
+  justify-content: center;
   border-radius: 30px;
   border: 2px solid white;
-  display: block;
-  font-size: 12px;
+  background-color: white;
+  font-size: 20px;
   font-weight: bold;
   height: 60px;
-  padding: 8px;
-  text-align: center;
-  width: 60px;
-  margin: 10px 20px 10px auto;
-  background-color: white;
+  padding-top: 15px;
+  width: 200px;
+  margin: 10px;
 }
