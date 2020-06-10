@@ -102,153 +102,154 @@ export default class Search extends React.Component {
       <div className="complete-section">
         <form className="search-form" id="search-form" >
           <h2>Search the Database</h2>
-          <fieldset>
-            <legend>Search Form</legend>
-              <label className="main-label" htmlFor="pet_type">
-                Pet Type
-              </label>
-              <label htmlFor="container">
-                <input
-                  type="checkbox"
-                  id="pet_type"
-                  name="pet_type"
-                  value="dog"
-                  aria-label="select pet type"
-                  onChange={event => this.updatePetType(event)}
-                />
-                <span className="checkmark"></span>
-              Dog</label>
+          <div className="fieldset_wrap">
+            <fieldset>
+              <legend>Search Form</legend>
+                <label className="main-label" htmlFor="pet_type">
+                  Select an animal type
+                </label>
+                <label htmlFor="container">
+                  <input
+                    type="checkbox"
+                    id="pet_type"
+                    name="pet_type"
+                    value="dog"
+                    aria-label="select pet type"
+                    onChange={event => this.updatePetType(event)}
+                  />
+                  <span className="checkmark"></span>
+                Dog</label>
 
-              <label htmlFor="container">
-                <input
-                  type="checkbox"
-                  id="pet_type"
-                  name="pet_type"
-                  value="cat"
-                  aria-label="select pet type"
-                  onChange={event => this.updatePetType(event)}
-                />
-                <span className="checkmark"></span>
-              Cat</label>
+                <label htmlFor="container">
+                  <input
+                    type="checkbox"
+                    id="pet_type"
+                    name="pet_type"
+                    value="cat"
+                    aria-label="select pet type"
+                    onChange={event => this.updatePetType(event)}
+                  />
+                  <span className="checkmark"></span>
+                Cat</label>
 
-              <label htmlFor="container">
-                <input
-                  type="checkbox"
-                  id="pet_type"
-                  name="bird"
-                  value="bird"
-                  aria-label="select pet type"
-                  onClick={event => this.updatePetType(event)}
-                />
-                <span className="checkmark"></span>
-              Bird</label>
+                <label htmlFor="container">
+                  <input
+                    type="checkbox"
+                    id="pet_type"
+                    name="bird"
+                    value="bird"
+                    aria-label="select pet type"
+                    onClick={event => this.updatePetType(event)}
+                  />
+                  <span className="checkmark"></span>
+                Bird</label>
 
-              <label className="main-label" htmlFor="sex">
-                Sex
-              </label>
-              <label htmlFor="container">
-                <input
-                  type="radio"
-                  id="male"
-                  name="sex"
-                  value="male"
-                  aria-label="select-male-sex"
-                  onChange={event => this.updateSex(event.target.value)}
-                />
-                <span className="checkmark"></span>
-              Male</label>
-              <label htmlFor="container">
-                <input
-                  type="radio"
-                  id="female"
-                  name="sex"
-                  value="female"
-                  aria-label="select-female-sex"
-                  onChange={event => this.updateSex(event.target.value)}
-                />
-                <span className="checkmark"></span>
-              Female</label>
+                <label className="main-label" htmlFor="sex">
+                  Sex
+                </label>
+                <label htmlFor="container">
+                  <input
+                    type="radio"
+                    id="male"
+                    name="sex"
+                    value="male"
+                    aria-label="select-male-sex"
+                    onChange={event => this.updateSex(event.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                Male</label>
+                <label htmlFor="container">
+                  <input
+                    type="radio"
+                    id="female"
+                    name="sex"
+                    value="female"
+                    aria-label="select-female-sex"
+                    onChange={event => this.updateSex(event.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                Female</label>
+            </fieldset>
+            <fieldset>
+              <legend>Search Form Second Part</legend>
+                <label className="main-label" htmlFor="adopted">
+                  Adopted
+                </label>
+                <label htmlFor="container">
+                  <input
+                    type="radio"
+                    id="yes"
+                    name="adopted"
+                    value="yes"
+                    aria-label="select adopted"
+                    onChange={event => this.updateAdopted(event.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                Adopted</label>
 
-              <label className="main-label" htmlFor="adopted">
-                Adopted
-              </label>
-              <label htmlFor="container">
+                <label htmlFor="container">
+                  <input
+                    type="radio"
+                    id="no"
+                    name="adopted"
+                    value="no"
+                    aria-label="select adopted"
+                    onChange={event => this.updateAdopted(event.target.value)}
+                  />
+                  <span className="checkmark"></span>
+                Unadopted</label>
+
+                <label  className="main-label" htmlFor="name">Name *</label>
                 <input
-                  type="radio"
-                  id="yes"
-                  name="adopted"
-                  value="yes"
-                  aria-label="select adopted"
-                  onChange={event => this.updateAdopted(event.target.value)}
+                  type="text"
+                  name="name"
+                  id="name"
+                  aria-label=" input name"
+                  onChange={event => this.updateName(event.target.value)}
                 />
-                <span className="checkmark"></span>
-              Adopted</label>
 
-              <label htmlFor="container">
+                <label className="main-label" htmlFor="age">Age *</label>
                 <input
-                  type="radio"
-                  id="no"
-                  name="adopted"
-                  value="no"
-                  aria-label="select adopted"
-                  onChange={event => this.updateAdopted(event.target.value)}
+                  type="text"
+                  name="age"
+                  id="age"
+                  aria-label="input age"
+                  onChange={event => this.updateAge(event.target.value)}
                 />
-                <span className="checkmark"></span>
-              Unadopted</label>
-
-              <label  className="main-label" htmlFor="name">Name *</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                aria-label=" input name"
-                onChange={event => this.updateName(event.target.value)}
-              />
-              <div className="input_info">
-                * Name must include characters from the modern English alphabet.
-              </div>
-
-              <label className="main-label" htmlFor="age">Age *</label>
-              <input
-                type="text"
-                name="age"
-                id="age"
-                aria-label="input age"
-                onChange={event => this.updateAge(event.target.value)}
-              />
-              <div className="input_info">
-                * Age must contain at least one number and be between 1 and 2 characters long.
-              </div>
-            <div>
-              <button
-                type="reset"
-                value="Reset"
-                className="reset-button"
-                aria-label="reset button"
-                onClick={event => this.refreshPage(event.target.value)}
-              >
-                Reset
-              </button>
-            </div>
-          </fieldset>
+            </fieldset>
+          </div>
+          <button
+            type="reset"
+            value="Reset"
+            className="reset-button"
+            aria-label="reset button"
+            onClick={event => this.refreshPage(event.target.value)}
+          >
+            Reset
+          </button>
         </form>
+
         <div className="results-section">
           <h4>Search Results:</h4>
           <div className="results-list">
             <ul>
               {filteredPets.map((pet) =>
                 <li key={pet.id} id={pet.id}>
-                  <div>Name: {pet.name}<br /></div>
-                  <div>Type: {pet.pet_type}<br /></div>
-                  <div>Sex: {pet.sex}<br /></div>
-                  <div>Age: {pet.age}<br /></div>
-                  <div>Adopted: {pet.adopted}<br /></div>
-                  <button className='Pet_delete'><Link to={`/update/${pet.id}`}>
-                    Update Pet
-                  </Link></button>
-                  <button className='Pet_delete'><Link to={`/delete/${pet.id}`}>
-                    Delete Pet
-                  </Link></button>
+                  <div className="pet_details">
+                    <div>Name: {pet.name}<br /></div>
+                    <div>Type: {pet.pet_type}<br /></div>
+                    <div>Sex: {pet.sex}<br /></div>
+                    <div>Age: {pet.age}<br /></div>
+                    <div>Adopted: {pet.adopted}<br /></div>
+                  </div>
+                  <div className="buttons">
+                    <button className='Pet_button'><Link to={`/update/${pet.id}`}>
+                      Update
+                    </Link></button>
+                    <button className='Pet_button'><Link to={`/delete/${pet.id}`}>
+                      Delete
+                    </Link></button>
+                  </div>
                 </li>
               )}
             </ul>

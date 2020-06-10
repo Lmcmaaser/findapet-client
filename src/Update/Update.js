@@ -30,11 +30,9 @@ class Update extends React.Component {
   updateName(name) {
     this.setState({name: {value: name, touched: true}});
   }
-
   updateAge(age) {
     this.setState({age: {value: age, touched: true}});
   }
-
   updateAdopted(adopted) {
     this.setState({adopted: {value: adopted, touched: true}});
   }
@@ -62,7 +60,6 @@ class Update extends React.Component {
     this.props.history.push('/');
   }
 
-
   render() {
     const { pets=[] } = this.context;
     const pet = pets.find(pet => pet.id === parseInt(
@@ -71,70 +68,74 @@ class Update extends React.Component {
     return (
       pet ? <form className="update-form" onSubmit={event => this.handleSubmit(event, pet)}>
         <h2>Update a Pets's Information</h2>
-        <fieldset>
-          <legend>Update Form</legend>
-            <label className="main-label">Pet to Update:</label>
-              <div className="pet-section">
-                <div key={pet.id}>
-                  <div>Name: {pet.name}<br /></div>
-                  <div>Type: {pet.pet_type}<br /></div>
-                  <div>Sex: {pet.sex}<br /></div>
-                  <div>Age: {pet.age}<br /></div>
-                  <div>Adopted: {pet.adopted}<br /></div>
+        <div className="fieldset_wrap">
+          <fieldset>
+            <legend>Selected Pet</legend>
+              <h3 className="pet_header">Pet to Update:</h3>
+                <div className="pet-section">
+                  <div key={pet.id}>
+                    <div>Name: {pet.name}<br /></div>
+                    <div>Type: {pet.pet_type}<br /></div>
+                    <div>Sex: {pet.sex}<br /></div>
+                    <div>Age: {pet.age}<br /></div>
+                    <div>Adopted: {pet.adopted}<br /></div>
+                  </div>
                 </div>
-              </div>
+          </fieldset>
+          <fieldset>
+            <legend>Update Form</legend>
             <h4>Enter Information to Update</h4>
-            <label  className="main-label" htmlFor="name">Name </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              aria-label=" input name"
-              onChange={event => this.updateName(event.target.value)}
-            />
-
-            <label className="main-label" htmlFor="age">Age </label>
-            <input
+              <label  className="main-label" htmlFor="name">Name </label>
+              <input
                 type="text"
-                name="age"
-                id="age"
-                onChange={event => this.updateAge(event.target.value)}
-            />
-
-            <label className="main-label" htmlFor="adopted">
-              Adopted
-            </label>
-            <label htmlFor="container">
-              <input
-                type="radio"
-                id="yes"
-                name="adopted"
-                value="yes"
-                aria-label="select adopted"
-                onChange={event => this.updateAdopted(event.target.value)}
+                name="name"
+                id="name"
+                aria-label=" input name"
+                onChange={event => this.updateName(event.target.value)}
               />
-              <span className="checkmark"></span>
-            Adopted</label>
 
-            <label htmlFor="container">
+              <label className="main-label" htmlFor="age">Age </label>
               <input
-                type="radio"
-                id="no"
-                name="adopted"
-                value="no"
-                aria-label="select adopted"
-                onChange={event => this.updateAdopted(event.target.value)}
+                  type="text"
+                  name="age"
+                  id="age"
+                  onChange={event => this.updateAge(event.target.value)}
               />
-              <span className="checkmark"></span>
-            Unadopted</label>
-          <div>
-            <button
-              className="submit-button"
-            >
-              Submit
-            </button>
-          </div>
-        </fieldset>
+
+              <label className="main-label" htmlFor="adopted">
+                Adopted
+              </label>
+              <label htmlFor="container">
+                <input
+                  type="radio"
+                  id="yes"
+                  name="adopted"
+                  value="yes"
+                  aria-label="select adopted"
+                  onChange={event => this.updateAdopted(event.target.value)}
+                />
+                <span className="checkmark"></span>
+              Adopted</label>
+
+              <label htmlFor="container">
+                <input
+                  type="radio"
+                  id="no"
+                  name="adopted"
+                  value="no"
+                  aria-label="select adopted"
+                  onChange={event => this.updateAdopted(event.target.value)}
+                />
+                <span className="checkmark"></span>
+              Unadopted</label>
+          </fieldset>
+        </div>
+        <button
+          type="submit"
+          className="submit-button"
+        >
+          Submit
+        </button>
       </form> : <></>
     )
   }
