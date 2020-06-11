@@ -37,20 +37,7 @@ h2 {
   border-radius: 10px;
 }
 
-/* button.submit-button {
-  border-radius: 20px;
-  border: 2px solid white;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  height: 70px;
-  padding: 8px;
-  text-align: center;
-  width: 90px;
-  margin: 20px 20px 20px auto;
-} */
-
-@media screen and (max-width: 530px) {
+@media screen and (max-width: 500px) {
   .section {
     flex-direction: column;
   }

@@ -1,7 +1,7 @@
  footer {
   width: 100%;
   margin-top: 10px;
-  padding: 15px;
+  padding: 20px 15px 15px 15px;
   background-color: white;
   /* border-top: 4px solid #A3D1D9; */
   text-align: center;
@@ -16,18 +16,31 @@ p {
 }
 
 a {
-  padding: 5px;
+  padding: 10px;
 }
-
 a:link {
   color: #7A1B36;
   font-weight: bold;
 }
-
 a:visited {
   color: #7A1B36;
 }
-
 a:hover {
   color: blue;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  p {
+    padding: 0px;
+  }
+
+  a {
+    padding: 10px;
+  }
 }

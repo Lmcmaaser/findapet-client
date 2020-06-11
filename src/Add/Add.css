@@ -113,3 +113,17 @@ button.submit-button {
   width: 200px;
   margin: 10px;
 }
+
+@media screen and (max-width: 500px) {
+  .add-form {
+    height: auto;
+  }
+  .fieldset_wrap {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  fieldset {
+    width: 100%;
+  }
+}

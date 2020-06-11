@@ -224,11 +224,20 @@ li {
   font-size: 18px;
 }
 
-@media screen and (max-width: 460px) {
-  h5 {
-    text-align: center;
+@media screen and (max-width: 500px) {
+  .search-form {
+    height: auto;
   }
-  .results-list {
+  .fieldset_wrap {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  fieldset {
+    width: 100%;
+  }
+
+  li {
     display: flex;
     flex-direction: column;
   }

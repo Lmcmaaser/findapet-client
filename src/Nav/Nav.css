@@ -4,18 +4,17 @@
   align-items: center;
   justify-content: space-evenly;
   list-style-type: none;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 10px;
   margin-top: 10px;
   background-color: white;
   font-size: 18px;
-  /* border-bottom: 4px solid #A3D1D9; */
 }
 
-@media screen and (max-width: 460px) {
-  .Nav {
+@media screen and (max-width: 500px) {
+  /* .Nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+  } */
 }
