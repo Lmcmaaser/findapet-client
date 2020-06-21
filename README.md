@@ -68,7 +68,7 @@ Technology used:
 Screenshots:
 ![Screenshot of FindAPet Home Page](screenshots/findapet-screenshot-home.png)
 ![Screenshot of FindAPet Add Form Page](screenshots/findapet-screenshot-add.png)
-![Screenshot of FindAPet Search Filter](screenshots/findapet-screenshot-search.png)
+![Screenshot of FindAPet Search Form](screenshots/findapet-screenshot-search.png)
 ![Screenshot of FindAPet Search Results](screenshots/findapet-screenshot-results.png)
 ![Screenshot of FindAPet Update Page](screenshots/findapet-screenshot-update.png)
 ![Screenshot of FindAPet Delete Page](screenshots/findapet-screenshot-delete.png)
