@@ -1,6 +1,7 @@
 import React from 'react';
 import './ValidationSuccess.css';
 
+
 export default function ValidationSuccess(props) {
   if(props.message) {
     return (

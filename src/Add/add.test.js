@@ -7,3 +7,7 @@ it('renders a .add-form by default', () => {
   const wrapper = shallow(<Add />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Add />);
+});

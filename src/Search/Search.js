@@ -3,6 +3,7 @@ import ApiContext from '../ApiContext';
 import './Search.css';
 import { Link } from 'react-router-dom';
 
+
 export default class Search extends React.Component {
   static contextType = ApiContext;
   constructor(props) {

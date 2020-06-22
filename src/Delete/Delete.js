@@ -11,6 +11,7 @@ class Delete extends React.Component {
   updateStatus(remove) {
     this.setState({remove: {value: remove, touched: true}});
   }
+  
 
   handleSubmit(event, pet) {
     event.preventDefault();

@@ -49,6 +49,7 @@ class Add extends React.Component {
     this.setState({age: {value: age, touched: true}});
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
     const { name, pet_type, sex, age } = this.state;
