@@ -7,3 +7,7 @@ it('renders a .update-form by default', () => {
   const wrapper = shallow(<Update />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Update />);
+});

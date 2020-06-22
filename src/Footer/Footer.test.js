@@ -7,3 +7,7 @@ it('renders a .Footer by default', () => {
   const wrapper = shallow(<Footer />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Footer />);
+});

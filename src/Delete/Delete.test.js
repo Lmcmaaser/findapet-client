@@ -7,3 +7,7 @@ it('renders a .delete-form by default', () => {
   const wrapper = shallow(<Delete />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Delete />);
+});

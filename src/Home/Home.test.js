@@ -7,3 +7,7 @@ it('renders a .content by default', () => {
   const wrapper = shallow(<Home />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Home />);
+});

@@ -7,3 +7,7 @@ it('renders a .success by default', () => {
   const wrapper = shallow(<ValidationSuccess />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<ValidationSuccess />);
+});

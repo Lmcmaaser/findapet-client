@@ -7,3 +7,7 @@ it('renders a .complete-section by default', () => {
   const wrapper = shallow(<Search />)
   expect(toJson(wrapper)).toMatchSnapshot()
 })
+
+it('renders without crashing', () => {
+  shallow(<Search />);
+});
