@@ -11,186 +11,214 @@ exports[`renders a .complete-section by default 1`] = `
     <h2>
       Search the Database
     </h2>
-    <fieldset>
-      <legend>
-        Search Form
-      </legend>
-      <label
-        className="main-label"
-        htmlFor="pet_type"
+    <div
+      className="search-instructions"
+    >
+      <div
+        className="instructions_header"
       >
-        Pet Type
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select pet type"
-          id="pet_type"
-          name="pet_type"
-          onChange={[Function]}
-          type="checkbox"
-          value="dog"
-        />
-        <span
-          className="checkmark"
-        />
-        Dog
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select pet type"
-          id="pet_type"
-          name="pet_type"
-          onChange={[Function]}
-          type="checkbox"
-          value="cat"
-        />
-        <span
-          className="checkmark"
-        />
-        Cat
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select pet type"
-          id="pet_type"
-          name="bird"
-          onClick={[Function]}
-          type="checkbox"
-          value="bird"
-        />
-        <span
-          className="checkmark"
-        />
-        Bird
-      </label>
-      <label
-        className="main-label"
-        htmlFor="sex"
-      >
-        Sex
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select-male-sex"
-          id="male"
-          name="sex"
-          onChange={[Function]}
-          type="radio"
-          value="male"
-        />
-        <span
-          className="checkmark"
-        />
-        Male
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select-female-sex"
-          id="female"
-          name="sex"
-          onChange={[Function]}
-          type="radio"
-          value="female"
-        />
-        <span
-          className="checkmark"
-        />
-        Female
-      </label>
-      <label
-        className="main-label"
-        htmlFor="adopted"
-      >
-        Adopted
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select adopted"
-          id="yes"
-          name="adopted"
-          onChange={[Function]}
-          type="radio"
-          value="yes"
-        />
-        <span
-          className="checkmark"
-        />
-        Adopted
-      </label>
-      <label
-        htmlFor="container"
-      >
-        <input
-          aria-label="select adopted"
-          id="no"
-          name="adopted"
-          onChange={[Function]}
-          type="radio"
-          value="no"
-        />
-        <span
-          className="checkmark"
-        />
-        Unadopted
-      </label>
-      <label
-        className="main-label"
-        htmlFor="name"
-      >
-        Name *
-      </label>
-      <input
-        aria-label=" input name"
-        id="name"
-        name="name"
-        onChange={[Function]}
-        placeholder="Fluffy"
-        type="text"
-      />
-      <p>
-        * Name must include characters from the modern English alphabet.
-      </p>
-      <label
-        className="main-label"
-        htmlFor="age"
-      >
-        Age *
-      </label>
-      <input
-        aria-label="input age"
-        id="age"
-        name="age"
-        onChange={[Function]}
-        placeholder="5"
-        type="text"
-      />
-      <p>
-        * Age must contain at least one number and be between 1 and 2 characters long.
-      </p>
-      <div>
-        <button
-          aria-label="reset button"
-          className="reset-button"
-          onClick={[Function]}
-          type="reset"
-          value="Reset"
-        >
-          Reset Search
-        </button>
+        Instructions
       </div>
-    </fieldset>
+      <div
+        className="one"
+      >
+        The Search page displays a list of all the pets in the database by default.
+      </div>
+      <div
+        className="one"
+      >
+        You can tailor your search to display pets by type, sex, adoption status, name, and age.
+      </div>
+      <div
+        className="one"
+      >
+        As you select your search filters, the list of displayed pets will change to reflect your selection.
+      </div>
+      <div
+        className="one"
+      >
+        If you want to start a new search, click the button that says "Reset Search".
+      </div>
+    </div>
+    <div
+      className="fieldset_wrap"
+    >
+      <fieldset>
+        <legend>
+          Search Form
+        </legend>
+        <label
+          className="main-label"
+          htmlFor="pet_type"
+        >
+          Select an animal type
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select pet type"
+            id="pet_type"
+            name="pet_type"
+            onChange={[Function]}
+            type="checkbox"
+            value="dog"
+          />
+          <span
+            className="checkmark"
+          />
+          Dog
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select pet type"
+            id="pet_type"
+            name="pet_type"
+            onChange={[Function]}
+            type="checkbox"
+            value="cat"
+          />
+          <span
+            className="checkmark"
+          />
+          Cat
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select pet type"
+            id="pet_type"
+            name="bird"
+            onClick={[Function]}
+            type="checkbox"
+            value="bird"
+          />
+          <span
+            className="checkmark"
+          />
+          Bird
+        </label>
+        <label
+          className="main-label"
+          htmlFor="sex"
+        >
+          Sex
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select-male-sex"
+            id="male"
+            name="sex"
+            onChange={[Function]}
+            type="radio"
+            value="male"
+          />
+          <span
+            className="checkmark"
+          />
+          Male
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select-female-sex"
+            id="female"
+            name="sex"
+            onChange={[Function]}
+            type="radio"
+            value="female"
+          />
+          <span
+            className="checkmark"
+          />
+          Female
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>
+          Search Form Second Part
+        </legend>
+        <label
+          className="main-label"
+          htmlFor="adopted"
+        >
+          Adopted
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select adopted"
+            id="yes"
+            name="adopted"
+            onChange={[Function]}
+            type="radio"
+            value="yes"
+          />
+          <span
+            className="checkmark"
+          />
+          Adopted
+        </label>
+        <label
+          htmlFor="container"
+        >
+          <input
+            aria-label="select adopted"
+            id="no"
+            name="adopted"
+            onChange={[Function]}
+            type="radio"
+            value="no"
+          />
+          <span
+            className="checkmark"
+          />
+          Unadopted
+        </label>
+        <label
+          className="main-label"
+          htmlFor="name"
+        >
+          Name (case-sensitive)
+        </label>
+        <input
+          aria-label="input name"
+          id="name"
+          name="name"
+          onChange={[Function]}
+          type="text"
+        />
+        <label
+          className="main-label"
+          htmlFor="age"
+        >
+          Age
+        </label>
+        <input
+          aria-label="input age"
+          id="age"
+          name="age"
+          onChange={[Function]}
+          type="text"
+        />
+      </fieldset>
+    </div>
+    <button
+      aria-label="reset button"
+      className="reset-button"
+      onClick={[Function]}
+      type="reset"
+      value="Reset"
+    >
+      Reset Search
+    </button>
   </form>
   <div
     className="results-section"
@@ -201,9 +229,6 @@ exports[`renders a .complete-section by default 1`] = `
     <div
       className="results-list"
     >
-      <h5>
-        List of pets:
-      </h5>
       <ul />
     </div>
   </div>

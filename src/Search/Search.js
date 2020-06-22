@@ -44,7 +44,7 @@ export default class Search extends React.Component {
     }
     this.setState({
       pet_typeFilter: selectedValues
-    }, ()=>{console.log(this.state.pet_typeFilter)})
+    }, ()=>this.state.pet_typeFilter)
   }
 
   updateSex(filter) {
@@ -102,6 +102,13 @@ export default class Search extends React.Component {
       <div className="complete-section">
         <form className="search-form" id="search-form" >
           <h2>Search the Database</h2>
+          <div className="search-instructions">
+            <div className="instructions_header">Instructions</div>
+            <div className="one">The Search page displays a list of all the pets in the database by default.</div>
+            <div className="one">You can tailor your search to display pets by type, sex, adoption status, name, and age.</div>
+            <div className="one">As you select your search filters, the list of displayed pets will change to reflect your selection.</div>
+            <div className="one">If you want to start a new search, click the button that says "Reset Search".</div>
+          </div>
           <div className="fieldset_wrap">
             <fieldset>
               <legend>Search Form</legend>
@@ -199,16 +206,16 @@ export default class Search extends React.Component {
                   <span className="checkmark"></span>
                 Unadopted</label>
 
-                <label  className="main-label" htmlFor="name">Name *</label>
+                <label  className="main-label" htmlFor="name">Name (case-sensitive)</label>
                 <input
                   type="text"
                   name="name"
                   id="name"
-                  aria-label=" input name"
+                  aria-label="input name"
                   onChange={event => this.updateName(event.target.value)}
                 />
 
-                <label className="main-label" htmlFor="age">Age *</label>
+                <label className="main-label" htmlFor="age">Age</label>
                 <input
                   type="text"
                   name="age"
@@ -225,7 +232,7 @@ export default class Search extends React.Component {
             aria-label="reset button"
             onClick={event => this.refreshPage(event.target.value)}
           >
-            Reset
+            Reset Search
           </button>
         </form>
 
